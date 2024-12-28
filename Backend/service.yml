@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spherely-service
+  namespace: default
+
+spec:
+  type: LoadBalancer
+  selector:
+    app: spherely-deployment
+  ports:
+    - port: 6060 
+      targetPort: 6060
