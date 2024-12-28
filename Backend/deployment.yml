@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spherely-deployment
+spec:
+  selector:
+    matchLabels:
+      app: spherely-deployment
+  replicas: 2
+
+  template:
+    metadata:
+      labels:
+        app: spherely-deployment
+    spec:
+      containers:
+      - name: spherely-deployment
+        image: addarshkumar/spherely:latest
+        ports:
+        - containerPort: 6060
